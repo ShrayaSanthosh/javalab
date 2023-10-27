@@ -23,16 +23,16 @@ abstract class Shapes{
 }
 class Rectangle extends Shapes{
 	 public void numberOfSides() {
-		System.out.println("No. of sildes of rectange is 4");
+		System.out.println("No. of sides of rectange is 4");
 	}
 }
 class Triangle extends Shapes{
 	 public void numberOfSides() {
-		System.out.println("No. of sildes of triangle is 3");
+		System.out.println("No. of sides of triangle is 3");
 	}
 }
 class Hexagon extends Shapes{
 	 public void numberOfSides() {
-		System.out.println("No. of sildes of hexagon is 6");
+		System.out.println("No. of sides of hexagon is 6");
 	}
 }
