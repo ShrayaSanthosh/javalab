@@ -1,3 +1,10 @@
+/*********************************************************************************************
+ * File         :MatrixMultiplication.java
+ * Description  :To multiply two matrix using arrays
+ * Author       :Shraya S Santhosh
+ * Version      :1.0
+ * Date         :3/10/2023
+ *********************************************************************************************/
 package newproj;
 import java.util.Scanner;
 public class MatrixMultiplication {
