@@ -82,32 +82,32 @@ public class interfaceClass {
 	public static void main(String[]args) {
 		Fish fish=new Fish();
 		fish.setName("Mimi");
-        String name=fish.getName();
-        System.out.println("FISH");
-        System.out.println("This fish's name is "+name);
-        fish.eat();
-        fish.walk();
-        fish.setName("Momo");
-        String name1=fish.getName();
-        System.out.println("This fish's name is "+name1);
+                String name=fish.getName();
+                System.out.println("FISH");
+                System.out.println("This fish's name is "+name);
+                fish.eat();
+                fish.walk();
+                fish.setName("Momo");
+                String name1=fish.getName();
+                System.out.println("This fish's name is "+name1);
         
-        System.out.println();
-        Cat cat=new Cat();
+                System.out.println();
+                Cat cat=new Cat();
 		cat.setName("Fluffy");
-        String name2=cat.getName();
-        System.out.println("CAT");
-        System.out.println("This Cat's name is "+name2);
-        cat.walk();
+                String name2=cat.getName();
+                System.out.println("CAT");
+                System.out.println("This Cat's name is "+name2);
+                cat.walk();
 		cat.eat();
 		cat.setName("isMoose");
-        String name3=cat.getName();
-        System.out.println("This Cat's name is "+name3);
+                String name3=cat.getName();
+                System.out.println("This Cat's name is "+name3);
         
-        System.out.println();
-        Spider spider=new Spider();
-        System.out.println("SPIDER");
-        spider.eat();
-        spider.walk();
+                System.out.println();
+                Spider spider=new Spider();
+                System.out.println("SPIDER");
+                spider.eat();
+                spider.walk();
       
         
 	}
