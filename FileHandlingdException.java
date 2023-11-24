@@ -7,7 +7,7 @@ public class FileHandlingdException {
 		FileWriter input=null;
 		FileReader content=null;
 		FileWriter output=null;
-		String value="Stringgg";
+		String value="This is the text to copy";
 		try {
 			input=new FileWriter("input.txt");
 			input.write(value);
