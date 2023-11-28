@@ -1,3 +1,10 @@
+/**********************************************************************
+ * File         :StringTokenizerSum.java
+ * Description  :To find the sum of integer in a given string 
+ * Author       :Shraya S Santhosh
+ * Version      :1.0
+ * Date         :28/11/2023
+ *******************************************************************/
 package newproj;
 import java.util.StringTokenizer;
 import java.util.Scanner;
