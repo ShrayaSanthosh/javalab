@@ -1,0 +1,95 @@
+package Javaprg;
+import java.util.Random;
+class NumberManager{
+	private int generatedNumber;
+	private boolean numberGenerated=false;
+	public synchronized void generateNumber() {
+		generatedNumber=new Random().nextInt(99)+2;
+		System.out.println("Generated number :"+generatedNumber);
+		numberGenerated=true;
+		notifyAll();
+	}
+	public synchronized void printEvenNumber() throws InterruptedException {
+		while(!numberGenerated || generatedNumber%2!=0) {
+			wait(); 
+		}
+		for(int i=2;i<=generatedNumber;i+=2) {
+			System.out.print(i+" ");
+		}
+		System.out.println();
+		numberGenerated=false;
+	}
+	public synchronized void printOddNumber() throws InterruptedException {
+		while(!numberGenerated || generatedNumber%2==0) {
+			wait(); 
+		}
+		for(int i=2;i<=generatedNumber;i+=2) {
+			System.out.print(i+" ");
+		}
+		System.out.println();
+		numberGenerated=false;
+	}
+}
+class NumberGenerator extends Thread{
+	NumberManager numberManager;
+	public NumberGenerator(NumberManager numberManager) {
+		this.numberManager=numberManager;
+	}
+	public void run() {
+		
+		while(true) {
+			numberManager.generateNumber();
+			try {
+				Thread.sleep(1000);
+			} catch(InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+}
+class EvenPrinterThread extends Thread{
+	NumberManager numberManager;
+	public EvenPrinterThread(NumberManager numberManager) {
+		this.numberManager=numberManager;
+	}
+	public void run() {
+		while(true) {
+			
+			try {
+				numberManager.printEvenNumber();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+class OddPrinterThread extends Thread{
+	NumberManager numberManager;
+	public OddPrinterThread(NumberManager numberManager) {
+		this.numberManager=numberManager;
+	}
+	public void run() {
+		while(true) {
+			
+			try {
+				numberManager.printOddNumber();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+public class MultiThreadOddEvren {
+	public static void main(String[] args) {
+		NumberManager numberManager=new NumberManager();
+		NumberGenerator numbergenerator= new NumberGenerator(numberManager);
+		EvenPrinterThread evenPrinterThread=new EvenPrinterThread(numberManager);
+		OddPrinterThread oddPrinterThread=new OddPrinterThread(numberManager);
+		numbergenerator.start();
+		evenPrinterThread.start();
+		oddPrinterThread.start();
+	}
+}
