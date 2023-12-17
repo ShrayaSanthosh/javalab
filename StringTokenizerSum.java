@@ -15,8 +15,10 @@ public class StringTokenizerSum {
 		  String line=sc.nextLine();
 		  StringTokenizer string=new StringTokenizer(line);
 		  int no,sum=0;
+	          System.out.println("Numbers :");
 		  while(string.hasMoreTokens()) {
 			  no=Integer.parseInt(string.nextToken());
+			  System.out.println(no);
 			  sum=sum+no;
 		  }
 		  System.out.println("Sum :"+sum);
