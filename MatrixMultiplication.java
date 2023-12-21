@@ -57,7 +57,7 @@ public class MatrixMultiplication {
 				for (int j=0;j<COLUMN_SIZE_2;j++) {
 					matrix3[i][j]=0;
 					for (int k=0;k<COLUMN_SIZE_1;k++) {
-						matrix3[i][j]=matrix3[i][j]+matrix1[k][j]*matrix2[i][k];
+						matrix3[i][j]=matrix3[i][j]+matrix1[i][k]*matrix2[k][j];
 					}
 					System.out.print(matrix3[i][j]+"\t");
 				}
